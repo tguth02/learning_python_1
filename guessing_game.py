@@ -8,21 +8,26 @@ random_number = random.randint(1,20) # Generates a random integer 1 - 20
 print("Guess a number 1-20. You have 5 attempts.")
 print(f"The number is {random_number}") # Used for Debugging
 
-number_of_tries = 0 # User guess starts with a base value of 1
+number_of_tries = 0 # User guess starts with a base value of 0
 
 user_guess = int(input("Guess: ")) 
 
 number_of_tries += 1
 
+
+
+def the_game():
+    # print(f"before {number_of_tries}")
+    if user_guess > random_number: 
+        print(Fore.CYAN + "Too High")
+    else: # if user input is too high or low, it will let them know
+        print(Fore.CYAN + "Too Low")
+
+
 while user_guess != random_number and number_of_tries < 5: # Loops until either of the conditions run as False
         try:
-            # print(f"before {number_of_tries}")
-            if user_guess > random_number: 
-                print(Fore.CYAN + "Too High")
-            else: # if user input is too high or low, it will let them know
-                 print(Fore.CYAN + "Too Low")
-
-            user_guess = int(input("Try again: ")) # prompts the user to try again
+            the_game()            
+            user_guess = int(input("Try again: "))
             number_of_tries += 1 # Adds 1 to each attempt 
             # print(f"after {number_of_tries}")
         except ValueError:
