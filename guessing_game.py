@@ -9,9 +9,8 @@ def the_game():
     print("Guess a number 1-20. You have 5 attempts.")
     # print(f"The number is {random_number}") # Used for Debugging
     
-    user_guess = None
-    number_of_tries = 0
-    
+    user_guess = None # Setting the user_guess variable so it is there before the loop
+    number_of_tries = 0 # Number of tries set to 0
     
     while user_guess != random_number and number_of_tries < 5: # Loops until either of the conditions run as False
         try:
@@ -29,7 +28,7 @@ def the_game():
             print("Input a number")
     if user_guess == random_number:
         print(Fore.GREEN + f"\n You Guessed the Number! {str(random_number)}")
-        print(f"\n It took you {number_of_tries} attempt(s).\n") # When the user guesses the number, a winning message and number of attempts displays
+        print(f"\n It took you {Fore.GREEN + number_of_tries} attempt(s).\n") # When the user guesses the number, a winning message and number of attempts displays
     else:
         print(Fore.RED + f"You took too many attempts. The number was, {random_number}") # If the loop ends due to number_of_tries <= 4, this message displays
 
