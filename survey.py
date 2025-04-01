@@ -15,7 +15,7 @@ def pasta_build(): # Function for the user to choose a pasta dish
 
   print(type_sauce + " " + type_pasta + " " + type_meat) # Creates the dish that the user creates 
 
-pasta_build()
+pasta_build() # Runs the program
 
 
 
